@@ -21,14 +21,10 @@ def main(t):
 
         if cmd == 'snd':
             last_sound = val(R, args[0])
-        elif cmd == 'set':
-            R[args[0]] = val(R, args[1])
-        elif cmd == 'add':
-            R[args[0]] += val(R, args[1])
-        elif cmd == 'mul':
-            R[args[0]] *= val(R, args[1])
-        elif cmd == 'mod':
-            R[args[0]] %= val(R, args[1])
+        elif cmd == 'set':  R[args[0]]  = val(R, args[1])
+        elif cmd == 'add':  R[args[0]] += val(R, args[1])
+        elif cmd == 'mul':  R[args[0]] *= val(R, args[1])
+        elif cmd == 'mod':  R[args[0]] %= val(R, args[1])
         elif cmd == 'rcv':
             if val(R, args[0]) != 0:
                 print('last_sound:', last_sound)
@@ -78,14 +74,10 @@ def main2(t):
 
             if cmd == 'snd':
                 msg2.append(val(R1, args[0]))
-            elif cmd == 'set':
-                R1[args[0]] = val(R1, args[1])
-            elif cmd == 'add':
-                R1[args[0]] += val(R1, args[1])
-            elif cmd == 'mul':
-                R1[args[0]] *= val(R1, args[1])
-            elif cmd == 'mod':
-                R1[args[0]] %= val(R1, args[1])
+            elif cmd == 'set': R1[args[0]]  = val(R1, args[1])
+            elif cmd == 'add': R1[args[0]] += val(R1, args[1])
+            elif cmd == 'mul': R1[args[0]] *= val(R1, args[1])
+            elif cmd == 'mod': R1[args[0]] %= val(R1, args[1])
             elif cmd == 'rcv':
                 if msg1: R1[args[0]] = msg1.popleft()
                 else:    break
@@ -108,14 +100,10 @@ def main2(t):
             if cmd == 'snd':
                 msg1.append(val(R2, args[0]))
                 values_sent += 1
-            elif cmd == 'set':
-                R2[args[0]] = val(R2, args[1])
-            elif cmd == 'add':
-                R2[args[0]] += val(R2, args[1])
-            elif cmd == 'mul':
-                R2[args[0]] *= val(R2, args[1])
-            elif cmd == 'mod':
-                R2[args[0]] %= val(R2, args[1])
+            elif cmd == 'set': R2[args[0]]  = val(R2, args[1])
+            elif cmd == 'add': R2[args[0]] += val(R2, args[1])
+            elif cmd == 'mul': R2[args[0]] *= val(R2, args[1])
+            elif cmd == 'mod': R2[args[0]] %= val(R2, args[1])
             elif cmd == 'rcv':
                 if msg2: R2[args[0]] = msg2.popleft()
                 else:    break

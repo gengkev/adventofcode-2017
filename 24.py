@@ -13,6 +13,7 @@ def main(t):
         M[a].append((a, b))
         M[b].append((a, b))
 
+    best_strength_1 = 0
     best_strength = 0
     best_length = 0
     q = deque([(0, 0, [])])
@@ -26,8 +27,8 @@ def main(t):
         # chain is previous ports
 
         # ** STAR 1 **
-        #if s > best_strength:
-        #    best_strength = s
+        if s > best_strength_1:
+            best_strength_1 = s
 
         # ** STAR 2 **
         if (len(chain), s) > (best_length, best_strength):
@@ -40,7 +41,8 @@ def main(t):
             d = n[1] if c == n[0] else n[0]
             q.append((d, s+c+d, chain + [n]))
 
-    print(best_strength)
+    print('Star 1:', best_strength_1)
+    print('Star 2:', best_strength)
 
 if __name__ == '__main__':
     print('Sample input:')
